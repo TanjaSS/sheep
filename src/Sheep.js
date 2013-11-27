@@ -1,6 +1,7 @@
-function Sheep(x, y) {
+function Sheep(x, y, direction) {
     this.x = x;
     this.y = y;
+    this.direction = direction;
 }
 
 Sheep.prototype.saySomething = function() {
@@ -13,4 +14,8 @@ Sheep.prototype.getX = function() {
 
 Sheep.prototype.getY = function() {
     return this.y;
+};
+
+Sheep.prototype.getDirection = function() {
+    return this.direction;
 };
