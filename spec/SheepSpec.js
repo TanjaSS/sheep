@@ -42,4 +42,52 @@ describe("Sheep", function() {
             });
         });
     });
+    
+    describe("#turnLeft", function() {
+        describe("when sheep is directed right", function() {
+            beforeEach(function() {
+                sheep = new Sheep(5, 5, "right");
+            });
+            
+            it("turns the sheep up", function() {
+                sheep.turnLeft();
+                expect(sheep.getDirection()).toEqual("up");
+            });
+        });
+        
+        describe("when sheep is directed up", function() {
+            beforeEach(function() {
+                sheep = new Sheep(5, 5, "up");
+            });
+            
+            it("turns the sheep left", function() {
+                sheep.turnLeft();
+                expect(sheep.getDirection()).toEqual("left");
+            });
+        });
+        
+                
+        describe("when sheep is directed left", function() {
+            beforeEach(function() {
+                sheep = new Sheep(5, 5, "left");
+            });
+            
+            it("turns the sheep down", function() {
+                sheep.turnLeft();
+                expect(sheep.getDirection()).toEqual("down");
+            });
+        });
+        
+                
+        describe("when sheep is directed down", function() {
+            beforeEach(function() {
+                sheep = new Sheep(5, 5, "down");
+            });
+            
+            it("turns the sheep right", function() {
+                sheep.turnLeft();
+                expect(sheep.getDirection()).toEqual("right");
+            });
+        });
+    });
 });
