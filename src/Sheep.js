@@ -31,3 +31,15 @@ Sheep.prototype.turnLeft = function() {
         this.direction = "right";
     }
 };
+
+Sheep.prototype.turnRight = function() {
+    if (this.direction === "right") {
+        this.direction = "down";
+    } else if (this.direction === "up") {
+        this.direction = "right";
+    } else if (this.direction === "left") {
+        this.direction = "up";
+    } else {
+        this.direction = "left";
+    }
+};
