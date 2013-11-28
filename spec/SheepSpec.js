@@ -138,4 +138,54 @@ describe("Sheep", function() {
             });
         });
     });
+
+    describe("#move", function() {
+      describe("when sheep is directed up", function() {
+        beforeEach(function() {
+          sheep = new Sheep(5, 5, "up");
+        });
+
+        it("moves the sheep up", function() {
+          sheep.move();
+          expect(sheep.getX()).toEqual(5);
+          expect(sheep.getY()).toEqual(4);
+        });
+      });
+
+      describe("when sheep is directed right", function() {
+        beforeEach(function() {
+          sheep = new Sheep(5, 5, "right");
+        });
+
+        it("moves the sheep right", function() {
+          sheep.move();
+          expect(sheep.getX()).toEqual(6);
+          expect(sheep.getY()).toEqual(5);
+        });
+      });
+
+      describe("when sheep is directed down", function() {
+        beforeEach(function() {
+          sheep = new Sheep(5, 5, "down");
+        });
+
+        it("moves the sheep down", function() {
+          sheep.move();
+          expect(sheep.getX()).toEqual(5);
+          expect(sheep.getY()).toEqual(6);
+        });
+      });
+
+      describe("when sheep is directed left", function() {
+        beforeEach(function() {
+          sheep = new Sheep(5, 5, "left");
+        });
+
+        it("moves the sheep left", function() {
+          sheep.move();
+          expect(sheep.getX()).toEqual(4);
+          expect(sheep.getY()).toEqual(5);
+        });
+      });
+    });
 });

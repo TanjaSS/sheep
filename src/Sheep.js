@@ -43,3 +43,15 @@ Sheep.prototype.turnRight = function() {
         this.direction = "left";
     }
 };
+
+Sheep.prototype.move = function() {
+    if (this.direction === "up") {
+        this.y = this.y - 1;
+    } else if (this.direction === "right") {
+        this.x = this.x + 1;
+    } else if (this.direction === "down") {
+        this.y = this.y + 1;
+    } else {
+        this.x = this.x - 1;
+    }
+};
