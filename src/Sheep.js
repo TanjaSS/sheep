@@ -2,6 +2,8 @@ function Sheep(x, y, direction) {
     this.x = x;
     this.y = y;
     this.direction = direction;
+    this.view = null;
+    this.size = 50;
 }
 
 Sheep.prototype.saySomething = function() {
@@ -54,4 +56,18 @@ Sheep.prototype.move = function() {
     } else {
         this.x = this.x - 1;
     }
+    
+    this.draw();
+};
+
+Sheep.prototype.draw = function() {
+    if (this.view === null) {
+        this.view = document.createElement("div");
+        this.view.setAttribute("class", "sheep");
+        document.getElementById("meadow").appendChild(this.view);
+    }
+    
+    var top = this.y * this.size + "px";
+    var left = this.x * this.size + "px";
+    this.view.setAttribute("style", "left:" + left + ";top:" + top);
 };

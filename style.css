@@ -1,0 +1,9 @@
+.meadow {
+    position: relative;
+}
+.sheep {
+    height: 50px;
+    width: 50px;
+    background: url("pictures/sheep.jpg") no-repeat;
+    position: absolute;
+}
