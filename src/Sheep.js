@@ -60,6 +60,22 @@ Sheep.prototype.move = function() {
     this.draw();
 };
 
+Sheep.prototype.moveRandomly = function() {
+    if (Math.random() < 0.7) {
+        this.move();
+    } else {
+        this.turnRandomly();
+    }
+};
+
+Sheep.prototype.turnRandomly = function() {
+    if (Math.random() < 0.5) {
+        this.turnLeft();
+    } else {
+        this.turnRight();
+    }
+};
+
 Sheep.prototype.draw = function() {
     if (this.view === null) {
         this.view = document.createElement("div");

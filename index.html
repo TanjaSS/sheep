@@ -7,8 +7,28 @@
         <div id="meadow"></div>
         <script src="src/Sheep.js"></script>
         <script>
-            var sheep = new Sheep(5, 5, "up");
-            sheep.draw();
+            var sheep1 = new Sheep(15, 15, "up");
+            sheep1.draw();
+            
+            var sheep2 = new Sheep(25, 15, "up");
+            sheep2.draw();
+            
+            var sheep3 = new Sheep(15, 25, "up");
+            sheep3.draw();
+            
+            var sheep4 = new Sheep(15, 5, "up");
+            sheep4.draw();
+            
+            var sheep5 = new Sheep(5, 15, "up");
+            sheep5.draw();
+            
+            setInterval(function() { 
+                sheep1.moveRandomly();
+                sheep2.moveRandomly(); 
+                sheep3.moveRandomly(); 
+                sheep4.moveRandomly(); 
+                sheep5.moveRandomly(); 
+            }, 200);
         </script>
     </body>
 </html>
