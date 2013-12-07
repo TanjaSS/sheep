@@ -3,7 +3,7 @@ function Sheep(x, y, direction) {
     this.y = y;
     this.direction = direction;
     this.view = null;
-    this.size = 50;
+    this.speed = 50;
 }
 
 Sheep.prototype.saySomething = function() {
@@ -48,13 +48,13 @@ Sheep.prototype.turnRight = function() {
 
 Sheep.prototype.move = function() {
     if (this.direction === "up") {
-        this.y = this.y - 1;
+        this.y = this.y - this.speed;
     } else if (this.direction === "right") {
-        this.x = this.x + 1;
+        this.x = this.x + this.speed;
     } else if (this.direction === "down") {
-        this.y = this.y + 1;
+        this.y = this.y + this.speed;
     } else {
-        this.x = this.x - 1;
+        this.x = this.x - this.speed;
     }
     
     this.draw();
@@ -83,7 +83,7 @@ Sheep.prototype.draw = function() {
         document.getElementById("meadow").appendChild(this.view);
     }
     
-    var top = this.y * this.size + "px";
-    var left = this.x * this.size + "px";
+    var top = this.y + "px";
+    var left = this.x + "px";
     this.view.setAttribute("style", "left:" + left + ";top:" + top);
 };

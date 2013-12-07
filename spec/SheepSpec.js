@@ -142,49 +142,49 @@ describe("Sheep", function() {
     describe("#move", function() {
       describe("when sheep is directed up", function() {
         beforeEach(function() {
-          sheep = new Sheep(5, 5, "up");
+          sheep = new Sheep(100, 100, "up");
         });
 
         it("moves the sheep up", function() {
           sheep.move();
-          expect(sheep.getX()).toEqual(5);
-          expect(sheep.getY()).toEqual(4);
+          expect(sheep.getX()).toEqual(100);
+          expect(sheep.getY()).toEqual(50);
         });
       });
 
       describe("when sheep is directed right", function() {
         beforeEach(function() {
-          sheep = new Sheep(5, 5, "right");
+          sheep = new Sheep(100, 100, "right");
         });
 
         it("moves the sheep right", function() {
           sheep.move();
-          expect(sheep.getX()).toEqual(6);
-          expect(sheep.getY()).toEqual(5);
+          expect(sheep.getX()).toEqual(150);
+          expect(sheep.getY()).toEqual(100);
         });
       });
 
       describe("when sheep is directed down", function() {
         beforeEach(function() {
-          sheep = new Sheep(5, 5, "down");
+          sheep = new Sheep(100, 100, "down");
         });
 
         it("moves the sheep down", function() {
           sheep.move();
-          expect(sheep.getX()).toEqual(5);
-          expect(sheep.getY()).toEqual(6);
+          expect(sheep.getX()).toEqual(100);
+          expect(sheep.getY()).toEqual(150);
         });
       });
 
       describe("when sheep is directed left", function() {
         beforeEach(function() {
-          sheep = new Sheep(5, 5, "left");
+          sheep = new Sheep(100, 100, "left");
         });
 
         it("moves the sheep left", function() {
           sheep.move();
-          expect(sheep.getX()).toEqual(4);
-          expect(sheep.getY()).toEqual(5);
+          expect(sheep.getX()).toEqual(50);
+          expect(sheep.getY()).toEqual(100);
         });
       });
     });
