@@ -1,8 +1,10 @@
 describe("Sheep", function() {
     var sheep;
+    var meadow;
     
     beforeEach(function() {
-        sheep = new Sheep(5, 10, "left");
+        meadow = new Meadow(400, 400);
+        sheep = new Sheep(5, 10, "left", meadow);
     });
     
     describe("#saySomething", function() {
@@ -34,7 +36,7 @@ describe("Sheep", function() {
             var sheep2;
             
             beforeEach(function() {
-                sheep2 = new Sheep(10, 10, "right");
+                sheep2 = new Sheep(10, 10, "right", meadow);
             });
             
             it("returns right", function() {
@@ -46,7 +48,7 @@ describe("Sheep", function() {
     describe("#turnLeft", function() {
         describe("when sheep is directed right", function() {
             beforeEach(function() {
-                sheep = new Sheep(5, 5, "right");
+                sheep = new Sheep(5, 5, "right", meadow);
             });
             
             it("turns the sheep up", function() {
@@ -57,7 +59,7 @@ describe("Sheep", function() {
         
         describe("when sheep is directed up", function() {
             beforeEach(function() {
-                sheep = new Sheep(5, 5, "up");
+                sheep = new Sheep(5, 5, "up", meadow);
             });
             
             it("turns the sheep left", function() {
@@ -69,7 +71,7 @@ describe("Sheep", function() {
                 
         describe("when sheep is directed left", function() {
             beforeEach(function() {
-                sheep = new Sheep(5, 5, "left");
+                sheep = new Sheep(5, 5, "left", meadow);
             });
             
             it("turns the sheep down", function() {
@@ -81,7 +83,7 @@ describe("Sheep", function() {
                 
         describe("when sheep is directed down", function() {
             beforeEach(function() {
-                sheep = new Sheep(5, 5, "down");
+                sheep = new Sheep(5, 5, "down", meadow);
             });
             
             it("turns the sheep right", function() {
@@ -94,7 +96,7 @@ describe("Sheep", function() {
     describe("#turnRight", function() {
         describe("when sheep is directed right", function() {
             beforeEach(function() {
-                sheep = new Sheep(5, 5, "right");
+                sheep = new Sheep(5, 5, "right", meadow);
             });
             
             it("turns the sheep down", function() {
@@ -105,7 +107,7 @@ describe("Sheep", function() {
         
         describe("when sheep is directed up", function() {
             beforeEach(function() {
-                sheep = new Sheep(5, 5, "up");
+                sheep = new Sheep(5, 5, "up", meadow);
             });
             
             it("turns the sheep right", function() {
@@ -117,7 +119,7 @@ describe("Sheep", function() {
                 
         describe("when sheep is directed left", function() {
             beforeEach(function() {
-                sheep = new Sheep(5, 5, "left");
+                sheep = new Sheep(5, 5, "left", meadow);
             });
             
             it("turns the sheep up", function() {
@@ -129,7 +131,7 @@ describe("Sheep", function() {
                 
         describe("when sheep is directed down", function() {
             beforeEach(function() {
-                sheep = new Sheep(5, 5, "down");
+                sheep = new Sheep(5, 5, "down", meadow);
             });
             
             it("turns the sheep left", function() {
@@ -142,7 +144,7 @@ describe("Sheep", function() {
     describe("#move", function() {
       describe("when sheep is directed up", function() {
         beforeEach(function() {
-          sheep = new Sheep(100, 100, "up");
+          sheep = new Sheep(100, 100, "up", meadow);
         });
 
         it("moves the sheep up", function() {
@@ -154,7 +156,7 @@ describe("Sheep", function() {
 
       describe("when sheep is directed right", function() {
         beforeEach(function() {
-          sheep = new Sheep(100, 100, "right");
+          sheep = new Sheep(100, 100, "right", meadow);
         });
 
         it("moves the sheep right", function() {
@@ -166,7 +168,7 @@ describe("Sheep", function() {
 
       describe("when sheep is directed down", function() {
         beforeEach(function() {
-          sheep = new Sheep(100, 100, "down");
+          sheep = new Sheep(100, 100, "down", meadow);
         });
 
         it("moves the sheep down", function() {
@@ -178,7 +180,7 @@ describe("Sheep", function() {
 
       describe("when sheep is directed left", function() {
         beforeEach(function() {
-          sheep = new Sheep(100, 100, "left");
+          sheep = new Sheep(100, 100, "left", meadow);
         });
 
         it("moves the sheep left", function() {

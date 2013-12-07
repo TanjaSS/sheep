@@ -1,5 +1,7 @@
 #meadow {
     position: relative;
+    border: 2px solid brown;
+    background-color: rgb(163, 235, 146);
 }
 
 .sheep {

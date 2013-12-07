@@ -1,9 +1,11 @@
-function Sheep(x, y, direction) {
+function Sheep(x, y, direction, meadow) {
     this.x = x;
     this.y = y;
     this.direction = direction;
+    this.meadow = meadow;
     this.view = null;
     this.speed = 50;
+    this.size = this.speed;
 }
 
 Sheep.prototype.saySomething = function() {
@@ -47,17 +49,19 @@ Sheep.prototype.turnRight = function() {
 };
 
 Sheep.prototype.move = function() {
-    if (this.direction === "up") {
-        this.y = this.y - this.speed;
-    } else if (this.direction === "right") {
-        this.x = this.x + this.speed;
-    } else if (this.direction === "down") {
-        this.y = this.y + this.speed;
-    } else {
-        this.x = this.x - this.speed;
+    if (this.meadow.canMove(this)) {
+        if (this.direction === "up") {
+            this.y = this.y - this.speed;
+        } else if (this.direction === "right") {
+            this.x = this.x + this.speed;
+        } else if (this.direction === "down") {
+            this.y = this.y + this.speed;
+        } else {
+            this.x = this.x - this.speed;
+        }
+        
+        this.draw();
     }
-    
-    this.draw();
 };
 
 Sheep.prototype.moveRandomly = function() {

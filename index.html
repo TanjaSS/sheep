@@ -5,29 +5,24 @@
     </head>
     <body>
         <div id="meadow"></div>
+        
+        <script src="src/Meadow.js"></script>
         <script src="src/Sheep.js"></script>
         <script>
-            var sheep1 = new Sheep(15, 15, "up");
-            sheep1.draw();
+            var meadow = new Meadow(600, 600);
+            var sheeps = [];
+            var numberOfSheeps = 8;
             
-            var sheep2 = new Sheep(25, 15, "up");
-            sheep2.draw();
-            
-            var sheep3 = new Sheep(15, 25, "up");
-            sheep3.draw();
-            
-            var sheep4 = new Sheep(15, 5, "up");
-            sheep4.draw();
-            
-            var sheep5 = new Sheep(5, 15, "up");
-            sheep5.draw();
-            
+            for (var i = 0; i < numberOfSheeps; i++) {
+                var sheep = new Sheep(0, 0, "up", meadow);
+                sheep.draw();
+                sheeps.push(sheep);
+            }
+
             setInterval(function() { 
-                sheep1.moveRandomly();
-                sheep2.moveRandomly(); 
-                sheep3.moveRandomly(); 
-                sheep4.moveRandomly(); 
-                sheep5.moveRandomly(); 
+                sheeps.forEach(function(sheep) {
+                    sheep.moveRandomly();
+                });
             }, 200);
         </script>
     </body>
